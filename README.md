@@ -9,8 +9,8 @@ Building
  - Using Xcode 4.5.2, open SensorSaver.xcodeproj and hit run.
  - It should just build and the app should run on any device with iOS5 or above.
 
- Licence (MIT)
- ------- 
+Licence (MIT)
+------- 
 
 Copyright (C) 2012 Ben Clayton
 
