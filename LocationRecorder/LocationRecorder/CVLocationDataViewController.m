@@ -157,7 +157,7 @@
         }
 
         [mailViewController setSubject:@"Data Files"];
-        [mailViewController setToRecipients:[NSArray arrayWithObject:@"foo@calvium.com"]];
+        [mailViewController setToRecipients:[NSArray arrayWithObject:@"ben@calvium.com"]];
         
         [self presentModalViewController:mailViewController animated:YES];
     }

@@ -58,6 +58,7 @@
 		B5D3D1F71667C8F6006C3991 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		B5D3D1FD1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+bv_flatDictionaryDescription.h"; sourceTree = "<group>"; };
 		B5D3D1FE1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+bv_flatDictionaryDescription.m"; sourceTree = "<group>"; };
+		B5D3D2001667D32F006C3991 /* LocationRecorder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LocationRecorder.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +111,7 @@
 		B543B77A1667B0F8008AD892 /* LocationRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				B5D3D2001667D32F006C3991 /* LocationRecorder.entitlements */,
 				B5D3D1FC1667C8FB006C3991 /* Cocoa Lumberjack */,
 				B543B7831667B0F8008AD892 /* CVAppDelegate.h */,
 				B543B7841667B0F8008AD892 /* CVAppDelegate.m */,
@@ -305,6 +307,7 @@
 		B543B7951667B0F8008AD892 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LocationRecorder/LocationRecorder.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationRecorder/LocationRecorder-Prefix.pch";
 				INFOPLIST_FILE = "LocationRecorder/LocationRecorder-Info.plist";
@@ -317,11 +320,14 @@
 		B543B7961667B0F8008AD892 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LocationRecorder/LocationRecorder.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Calvium Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationRecorder/LocationRecorder-Prefix.pch";
 				INFOPLIST_FILE = "LocationRecorder/LocationRecorder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "26B07CD3-D4A2-43BF-A3AC-051AC4D667E6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

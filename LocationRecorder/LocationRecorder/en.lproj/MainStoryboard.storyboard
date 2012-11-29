@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Location Data View Controller - LogSense-->
+        <!--Location Data View Controller - Sensor Saver-->
         <scene sceneID="LnR-uj-FXs">
             <objects>
                 <tableViewController id="efC-L5-RHZ" customClass="CVLocationDataViewController" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="efC-L5-RHZ" id="dF7-VL-EH5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="LogSense" id="UUI-2F-KhF">
+                    <navigationItem key="navigationItem" title="Sensor Saver" id="UUI-2F-KhF">
                         <barButtonItem key="rightBarButtonItem" title="Email Data" id="D3w-ao-807">
                             <connections>
                                 <action selector="sendEmailButtonClicked:" destination="efC-L5-RHZ" id="sKX-Hi-YvF"/>
@@ -102,6 +102,14 @@
             <point key="canvasLocation" x="753" y="-72"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CVLocationDataViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVLocationDataViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sendEmailButtonClicked:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
