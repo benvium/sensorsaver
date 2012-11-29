@@ -21,6 +21,11 @@
 		B543B79B1667B18C008AD892 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B543B79A1667B18C008AD892 /* CoreLocation.framework */; };
 		B543B79D1667B1A2008AD892 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B543B79C1667B1A2008AD892 /* MessageUI.framework */; };
 		B5D3D1EE1667C054006C3991 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D3D1ED1667C054006C3991 /* CoreMotion.framework */; };
+		B5D3D1F81667C8F6006C3991 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D3D1F11667C8F6006C3991 /* DDASLLogger.m */; };
+		B5D3D1F91667C8F6006C3991 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D3D1F31667C8F6006C3991 /* DDFileLogger.m */; };
+		B5D3D1FA1667C8F6006C3991 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D3D1F51667C8F6006C3991 /* DDLog.m */; };
+		B5D3D1FB1667C8F6006C3991 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D3D1F71667C8F6006C3991 /* DDTTYLogger.m */; };
+		B5D3D1FF1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D3D1FE1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +48,16 @@
 		B543B79A1667B18C008AD892 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B543B79C1667B1A2008AD892 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B5D3D1ED1667C054006C3991 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B5D3D1F01667C8F6006C3991 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		B5D3D1F11667C8F6006C3991 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		B5D3D1F21667C8F6006C3991 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		B5D3D1F31667C8F6006C3991 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		B5D3D1F41667C8F6006C3991 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		B5D3D1F51667C8F6006C3991 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		B5D3D1F61667C8F6006C3991 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		B5D3D1F71667C8F6006C3991 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		B5D3D1FD1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+bv_flatDictionaryDescription.h"; sourceTree = "<group>"; };
+		B5D3D1FE1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+bv_flatDictionaryDescription.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +110,15 @@
 		B543B77A1667B0F8008AD892 /* LocationRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				B5D3D1FC1667C8FB006C3991 /* Cocoa Lumberjack */,
 				B543B7831667B0F8008AD892 /* CVAppDelegate.h */,
 				B543B7841667B0F8008AD892 /* CVAppDelegate.m */,
 				B543B78C1667B0F8008AD892 /* MainStoryboard.storyboard */,
 				B543B77B1667B0F8008AD892 /* Supporting Files */,
 				B543B7971667B145008AD892 /* CVLocationDataViewController.h */,
 				B543B7981667B145008AD892 /* CVLocationDataViewController.m */,
+				B5D3D1FD1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.h */,
+				B5D3D1FE1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.m */,
 			);
 			path = LocationRecorder;
 			sourceTree = "<group>";
@@ -117,6 +135,21 @@
 				B543B78A1667B0F8008AD892 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5D3D1FC1667C8FB006C3991 /* Cocoa Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				B5D3D1F01667C8F6006C3991 /* DDASLLogger.h */,
+				B5D3D1F11667C8F6006C3991 /* DDASLLogger.m */,
+				B5D3D1F21667C8F6006C3991 /* DDFileLogger.h */,
+				B5D3D1F31667C8F6006C3991 /* DDFileLogger.m */,
+				B5D3D1F41667C8F6006C3991 /* DDLog.h */,
+				B5D3D1F51667C8F6006C3991 /* DDLog.m */,
+				B5D3D1F61667C8F6006C3991 /* DDTTYLogger.h */,
+				B5D3D1F71667C8F6006C3991 /* DDTTYLogger.m */,
+			);
+			name = "Cocoa Lumberjack";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +222,11 @@
 				B543B7811667B0F8008AD892 /* main.m in Sources */,
 				B543B7851667B0F8008AD892 /* CVAppDelegate.m in Sources */,
 				B543B7991667B145008AD892 /* CVLocationDataViewController.m in Sources */,
+				B5D3D1F81667C8F6006C3991 /* DDASLLogger.m in Sources */,
+				B5D3D1F91667C8F6006C3991 /* DDFileLogger.m in Sources */,
+				B5D3D1FA1667C8F6006C3991 /* DDLog.m in Sources */,
+				B5D3D1FB1667C8F6006C3991 /* DDTTYLogger.m in Sources */,
+				B5D3D1FF1667C9C8006C3991 /* NSDictionary+bv_flatDictionaryDescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +308,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationRecorder/LocationRecorder-Prefix.pch";
 				INFOPLIST_FILE = "LocationRecorder/LocationRecorder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -281,6 +320,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationRecorder/LocationRecorder-Prefix.pch";
 				INFOPLIST_FILE = "LocationRecorder/LocationRecorder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -9,6 +9,10 @@
 #import "CVLocationDataViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
+#import "DDFileLogger.h"
+#import "CVAppDelegate.h"
+
+
 @interface CVLocationDataViewController ()
 
 @end
@@ -118,15 +122,58 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSMutableDictionary *)errorLogData
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSUInteger maximumLogFilesToReturn = 10;
+    NSMutableDictionary *errorLogFiles = [NSMutableDictionary dictionaryWithCapacity:maximumLogFilesToReturn];
+    
+    DDFileLogger *logger = ((CVAppDelegate*)[UIApplication sharedApplication].delegate).fileLogger;
+    
+    NSArray *sortedLogFileInfos = [logger.logFileManager sortedLogFileInfos];
+    for (int i = 0; i < MIN(sortedLogFileInfos.count, maximumLogFilesToReturn); i++) {
+        DDLogFileInfo *logFileInfo = [sortedLogFileInfos objectAtIndex:i];
+        
+        errorLogFiles[logFileInfo.fileName] = [NSData dataWithContentsOfFile:logFileInfo.filePath];
+    }
+    return errorLogFiles;
 }
+
+- (IBAction)sendEmailButtonClicked :(id)sender {
+    [self composeEmailWithDebugAttachment];
+}
+
+- (void)composeEmailWithDebugAttachment
+{
+    if ([MFMailComposeViewController canSendMail]) {
+        
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        mailViewController.mailComposeDelegate = self;
+
+        NSDictionary* files = [self errorLogData];
+        for (NSString* filename in files) {
+            NSMutableData *errorLogData = [NSMutableData data];
+            [errorLogData appendData:files[filename]];
+            [mailViewController addAttachmentData:errorLogData mimeType:@"text/csv" fileName:filename];
+        }
+
+        [mailViewController setSubject:@"Data Files"];
+        [mailViewController setToRecipients:[NSArray arrayWithObject:@"foo@calvium.com"]];
+        
+        [self presentModalViewController:mailViewController animated:YES];
+    }
+    
+    else {
+        NSString *message;
+        
+        message = @"Sorry, your issue can't be reported right now. This is most likely because no mail accounts are set up on your device.";
+        [[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles: nil] show];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
 
 @end

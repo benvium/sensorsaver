@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface CVLocationDataViewController : UITableViewController {
+@interface CVLocationDataViewController : UITableViewController <MFMailComposeViewControllerDelegate> {
     NSMutableDictionary* _currentLocation;
     NSMutableDictionary* _currentHeading;
     NSMutableDictionary* _currentAccel;

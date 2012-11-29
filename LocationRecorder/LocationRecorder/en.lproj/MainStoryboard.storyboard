@@ -46,8 +46,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="LogSense" id="UUI-2F-KhF">
-                        <barButtonItem key="leftBarButtonItem" title="Clear Data" id="bta-rG-zXY"/>
-                        <barButtonItem key="rightBarButtonItem" title="Email Data" id="D3w-ao-807"/>
+                        <barButtonItem key="rightBarButtonItem" title="Email Data" id="D3w-ao-807">
+                            <connections>
+                                <action selector="sendEmailButtonClicked:" destination="efC-L5-RHZ" id="sKX-Hi-YvF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qno-Ws-BKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,11 +102,6 @@
             <point key="canvasLocation" x="753" y="-72"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CVLocationDataViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVLocationDataViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

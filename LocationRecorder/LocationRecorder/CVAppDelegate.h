@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+@class DDFileLogger;
+
 @interface CVAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate> {
     NSOperationQueue* queue;
+//    DDFileLogger* _fileLogger;
+
+    NSMutableArray* _locationData;
+    NSMutableArray* _headingData;
+    NSMutableArray* _motionData;
 }
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) DDFileLogger* fileLogger;
 
 @end

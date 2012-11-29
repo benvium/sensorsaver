@@ -8,14 +8,28 @@
 
 #import "CVAppDelegate.h"
 #import <CoreMotion/CoreMotion.h>
+#import "DDLog.h"
+#import "DDFileLogger.h"
+#import "DDTTYLogger.h"
+#import "NSDictionary+bv_flatDictionaryDescription.h"
 
 @implementation CVAppDelegate
 
 static CLLocationManager* locationManager;
 static CMMotionManager* motionManager;
 
+static const int ddLogLevel = LOG_LEVEL_INFO;
+
+static int motionCounter = 0;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Configure fast logger...
+    _fileLogger = [[DDFileLogger alloc] init];
+    _fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    _fileLogger.logFileManager.maximumNumberOfLogFiles = 7; // a weeks worth
+    [DDLog addLogger:_fileLogger];
+//    [DDLog addLogger:[DDTTYLogger sharedInstance]]; this is log to xcode window.
 
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -41,9 +55,10 @@ static CMMotionManager* motionManager;
         [self performSelectorOnMainThread:@selector(sendAccelUpdateInMainThread:) withObject:data waitUntilDone:NO];
     }];*/
     
-    motionManager.deviceMotionUpdateInterval = 0.3;
+    motionManager.deviceMotionUpdateInterval = 0.05; // 20 times a second.
     [motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *motion, NSError *error) {
         
+        motionCounter = (motionCounter + 1) % 5;
         
         NSDictionary* data = @{
         @"gravity x":[NSNumber numberWithDouble:motion.gravity.x],
@@ -61,12 +76,15 @@ static CMMotionManager* motionManager;
         @"mag field z":[NSNumber numberWithDouble:motion.magneticField.field.z],
         };
         
-        NSLog(@"new accel %@", data);
         
-        [self performSelectorOnMainThread:@selector(sendAccelUpdateInMainThread:) withObject:data waitUntilDone:NO];
-
+        DDLogInfo( @"%.0f,%@", motion.timestamp, [data bv_flatDictionaryDescription] );
         
-        
+        // update interface occasionally.
+        if (motionCounter == 0) {
+            NSLog(@"acel update info..");
+            
+            [self performSelectorOnMainThread:@selector(sendAccelUpdateInMainThread:) withObject:data waitUntilDone:NO];
+        }
     }];
     
     return YES;
@@ -86,6 +104,8 @@ static CMMotionManager* motionManager;
     @"course (degrees)": [NSNumber numberWithDouble:newLocation.course],
     @"speed (meters/sec)": [NSNumber numberWithDouble:newLocation.speed] };
     
+    DDLogInfo( @"%@,%@", newLocation.timestamp, [data bv_flatDictionaryDescription] );
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"CVNewLocation" object:nil userInfo:data];
 }
 
@@ -99,6 +119,8 @@ static CMMotionManager* motionManager;
     @"y": [NSNumber numberWithDouble:newHeading.y],
     @"z": [NSNumber numberWithDouble:newHeading.z]
     };
+    
+    DDLogInfo( @"%@,%@", newHeading.timestamp, [data bv_flatDictionaryDescription] );
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"CVNewHeading" object:nil userInfo:data];
 }
