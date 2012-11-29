@@ -156,9 +156,7 @@
             [mailViewController addAttachmentData:errorLogData mimeType:@"text/csv" fileName:filename];
         }
 
-        [mailViewController setSubject:@"Data Files"];
-        [mailViewController setToRecipients:[NSArray arrayWithObject:@"ben@calvium.com"]];
-        
+        [mailViewController setSubject:@"Data Files"];        
         [self presentModalViewController:mailViewController animated:YES];
     }
     

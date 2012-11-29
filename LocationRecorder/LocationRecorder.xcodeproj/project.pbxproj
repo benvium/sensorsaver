@@ -81,9 +81,6 @@
 		B543B7651667B0F8008AD892 = {
 			isa = PBXGroup;
 			children = (
-				B5D3D1ED1667C054006C3991 /* CoreMotion.framework */,
-				B543B79C1667B1A2008AD892 /* MessageUI.framework */,
-				B543B79A1667B18C008AD892 /* CoreLocation.framework */,
 				B543B77A1667B0F8008AD892 /* LocationRecorder */,
 				B543B7731667B0F8008AD892 /* Frameworks */,
 				B543B7711667B0F8008AD892 /* Products */,
@@ -101,6 +98,9 @@
 		B543B7731667B0F8008AD892 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5D3D1ED1667C054006C3991 /* CoreMotion.framework */,
+				B543B79C1667B1A2008AD892 /* MessageUI.framework */,
+				B543B79A1667B18C008AD892 /* CoreLocation.framework */,
 				B543B7741667B0F8008AD892 /* UIKit.framework */,
 				B543B7761667B0F8008AD892 /* Foundation.framework */,
 				B543B7781667B0F8008AD892 /* CoreGraphics.framework */,
@@ -321,13 +321,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LocationRecorder/LocationRecorder.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Calvium Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationRecorder/LocationRecorder-Prefix.pch";
 				INFOPLIST_FILE = "LocationRecorder/LocationRecorder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "26B07CD3-D4A2-43BF-A3AC-051AC4D667E6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

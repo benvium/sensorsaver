@@ -40,21 +40,6 @@ static int motionCounter = 0;
     queue = [[NSOperationQueue alloc] init];
     motionManager = [[CMMotionManager alloc] init];
     
-    /*
-    motionManager.accelerometerUpdateInterval = 0.3;
-    [motionManager startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-
-        NSDictionary* data = @{
-            @"x":[NSNumber numberWithDouble:accelerometerData.acceleration.x],
-            @"y":[NSNumber numberWithDouble:accelerometerData.acceleration.y],
-            @"z":[NSNumber numberWithDouble:accelerometerData.acceleration.z]
-        };
-        
-                NSLog(@"new accel %@", data);
-        
-        [self performSelectorOnMainThread:@selector(sendAccelUpdateInMainThread:) withObject:data waitUntilDone:NO];
-    }];*/
-    
     motionManager.deviceMotionUpdateInterval = 0.05; // 20 times a second.
     [motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *motion, NSError *error) {
         
@@ -80,9 +65,7 @@ static int motionCounter = 0;
         DDLogInfo( @"%.0f,%@", motion.timestamp, [data bv_flatDictionaryDescription] );
         
         // update interface occasionally.
-        if (motionCounter == 0) {
-            NSLog(@"acel update info..");
-            
+        if (motionCounter == 0) {            
             [self performSelectorOnMainThread:@selector(sendAccelUpdateInMainThread:) withObject:data waitUntilDone:NO];
         }
     }];
