@@ -10,9 +10,9 @@
 #import <MessageUI/MessageUI.h>
 
 @interface CVLocationDataViewController : UITableViewController <MFMailComposeViewControllerDelegate> {
-    NSMutableDictionary* _currentLocation;
-    NSMutableDictionary* _currentHeading;
-    NSMutableDictionary* _currentAccel;
+    NSDictionary* _currentLocation;
+    NSDictionary* _currentHeading;
+    NSDictionary* _currentAccel;
 }
 
 @end

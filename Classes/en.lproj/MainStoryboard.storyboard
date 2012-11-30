@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" title="Sensor Saver" id="UUI-2F-KhF">
                         <barButtonItem key="rightBarButtonItem" title="Email Data" id="D3w-ao-807">
                             <connections>
-                                <action selector="sendEmailButtonClicked:" destination="efC-L5-RHZ" id="sKX-Hi-YvF"/>
+                                <action selector="sendEmailButtonClicked:" destination="efC-L5-RHZ" id="9nA-cY-2dH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -56,32 +56,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qno-Ws-BKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1279" y="-72"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="yBH-67-XGW">
-            <objects>
-                <viewController id="jlS-4s-gLb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HcL-8v-ZMc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Waiting for location..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4ST-6J-Vo5">
-                                <rect key="frame" x="59" y="143" width="219" height="188"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <segue destination="sUi-aK-Po8" kind="modal" identifier="GotLocation" id="PYO-hj-LPC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DFR-ez-jnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="102" y="680"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Avv-oQ-LPs">
@@ -102,14 +76,6 @@
             <point key="canvasLocation" x="753" y="-72"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CVLocationDataViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVLocationDataViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sendEmailButtonClicked:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

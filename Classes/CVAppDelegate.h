@@ -13,8 +13,6 @@
 
 @interface CVAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate> {
     NSOperationQueue* queue;
-//    DDFileLogger* _fileLogger;
-
     NSMutableArray* _locationData;
     NSMutableArray* _headingData;
     NSMutableArray* _motionData;

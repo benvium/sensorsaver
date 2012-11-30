@@ -39,23 +39,22 @@
     [self performSelector:@selector(actuallyUpdateHeading:) withObject:note.userInfo afterDelay:0.1];
 }
 
--(void) accelChanged:(NSNotification*) note {
-    _currentAccel = [note.userInfo copy];
-    
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
-}
-
 -(void) locationChanged:(NSNotification*) note {
-    [_currentLocation addEntriesFromDictionary:note.userInfo];
-
+    _currentLocation = note.userInfo;
+    
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 -(void) actuallyUpdateHeading:(NSDictionary*) dict {
-    _currentHeading = [dict copy];
+    _currentHeading = dict;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
 }
 
+-(void) accelChanged:(NSNotification*) note {
+    _currentAccel = note.userInfo;
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
+}
 
 #pragma mark - Table view data source
 

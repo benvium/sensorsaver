@@ -61,7 +61,7 @@ static int motionCounter = 0;
         @"mag field z":[NSNumber numberWithDouble:motion.magneticField.field.z],
         };
         
-        
+        // Ok to log here as DDLog is thread-safe
         DDLogInfo( @"%.0f,%@", motion.timestamp, [data bv_flatDictionaryDescription] );
         
         // update interface occasionally.

@@ -15,7 +15,6 @@
 		B5D3D1EE1667C054006C3991 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D3D1ED1667C054006C3991 /* CoreMotion.framework */; };
 		B5D3D21B1667DAC8006C3991 /* CVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D3D2011667DAC8006C3991 /* CVAppDelegate.m */; };
 		B5D3D21C1667DAC8006C3991 /* CVLocationDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D3D2021667DAC8006C3991 /* CVLocationDataViewController.m */; };
-		B5D3D21D1667DAC8006C3991 /* LocationRecorder-adhoc.ipa in Resources */ = {isa = PBXBuildFile; fileRef = B5D3D2031667DAC8006C3991 /* LocationRecorder-adhoc.ipa */; };
 		B5D3D21E1667DAC8006C3991 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D3D2041667DAC8006C3991 /* MainStoryboard.storyboard */; };
 		B5D3D21F1667DAC8006C3991 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D3D2061667DAC8006C3991 /* InfoPlist.strings */; };
 		B5D3D2201667DAC8006C3991 /* SensorSaver-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5D3D2081667DAC8006C3991 /* SensorSaver-Info.plist */; };
@@ -41,15 +40,14 @@
 		B5D3D1ED1667C054006C3991 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B5D3D2011667DAC8006C3991 /* CVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVAppDelegate.m; sourceTree = "<group>"; };
 		B5D3D2021667DAC8006C3991 /* CVLocationDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVLocationDataViewController.m; sourceTree = "<group>"; };
-		B5D3D2031667DAC8006C3991 /* LocationRecorder-adhoc.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LocationRecorder-adhoc.ipa"; sourceTree = "<group>"; };
 		B5D3D2051667DAC8006C3991 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		B5D3D2071667DAC8006C3991 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B5D3D2081667DAC8006C3991 /* SensorSaver-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SensorSaver-Info.plist"; sourceTree = "<group>"; };
-		B5D3D2091667DAC8006C3991 /* LocationRecorder.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LocationRecorder.entitlements; sourceTree = "<group>"; };
+		B5D3D2081667DAC8006C3991 /* SensorSaver-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SensorSaver-Info.plist"; path = "Classes/SensorSaver-Info.plist"; sourceTree = "<group>"; };
+		B5D3D2091667DAC8006C3991 /* LocationRecorder.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = LocationRecorder.entitlements; path = Classes/LocationRecorder.entitlements; sourceTree = "<group>"; };
 		B5D3D20A1667DAC8006C3991 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
 		B5D3D20B1667DAC8006C3991 /* CVLocationDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVLocationDataViewController.h; sourceTree = "<group>"; };
 		B5D3D20C1667DAC8006C3991 /* CVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVAppDelegate.h; sourceTree = "<group>"; };
-		B5D3D20D1667DAC8006C3991 /* SensorSaver-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SensorSaver-Prefix.pch"; sourceTree = "<group>"; };
+		B5D3D20D1667DAC8006C3991 /* SensorSaver-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SensorSaver-Prefix.pch"; path = "Classes/SensorSaver-Prefix.pch"; sourceTree = "<group>"; };
 		B5D3D20E1667DAC8006C3991 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
 		B5D3D20F1667DAC8006C3991 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		B5D3D2101667DAC8006C3991 /* NSDictionary+bv_flatDictionaryDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+bv_flatDictionaryDescription.m"; sourceTree = "<group>"; };
@@ -59,10 +57,10 @@
 		B5D3D2141667DAC8006C3991 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
 		B5D3D2151667DAC8006C3991 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
 		B5D3D2161667DAC8006C3991 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
-		B5D3D2171667DAC8006C3991 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B5D3D2181667DAC8006C3991 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B5D3D2191667DAC8006C3991 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		B5D3D21A1667DAC8006C3991 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B5D3D2171667DAC8006C3991 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
+		B5D3D2181667DAC8006C3991 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Classes/Default-568h@2x.png"; sourceTree = "<group>"; };
+		B5D3D2191667DAC8006C3991 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Classes/Default.png; sourceTree = "<group>"; };
+		B5D3D21A1667DAC8006C3991 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Classes/Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +83,7 @@
 		B543B7651667B0F8008AD892 = {
 			isa = PBXGroup;
 			children = (
+				B5D3D2351668CE25006C3991 /* Other Files */,
 				B543B77A1667B0F8008AD892 /* Classes */,
 				B543B7731667B0F8008AD892 /* Frameworks */,
 				B543B7711667B0F8008AD892 /* Products */,
@@ -115,32 +114,46 @@
 		B543B77A1667B0F8008AD892 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B5D3D2011667DAC8006C3991 /* CVAppDelegate.m */,
-				B5D3D2021667DAC8006C3991 /* CVLocationDataViewController.m */,
-				B5D3D2031667DAC8006C3991 /* LocationRecorder-adhoc.ipa */,
 				B5D3D2041667DAC8006C3991 /* MainStoryboard.storyboard */,
-				B5D3D2061667DAC8006C3991 /* InfoPlist.strings */,
-				B5D3D2081667DAC8006C3991 /* SensorSaver-Info.plist */,
-				B5D3D2091667DAC8006C3991 /* LocationRecorder.entitlements */,
-				B5D3D20A1667DAC8006C3991 /* DDFileLogger.m */,
-				B5D3D20B1667DAC8006C3991 /* CVLocationDataViewController.h */,
 				B5D3D20C1667DAC8006C3991 /* CVAppDelegate.h */,
-				B5D3D20D1667DAC8006C3991 /* SensorSaver-Prefix.pch */,
-				B5D3D20E1667DAC8006C3991 /* DDLog.m */,
-				B5D3D20F1667DAC8006C3991 /* DDTTYLogger.m */,
+				B5D3D2011667DAC8006C3991 /* CVAppDelegate.m */,
+				B5D3D20B1667DAC8006C3991 /* CVLocationDataViewController.h */,
+				B5D3D2021667DAC8006C3991 /* CVLocationDataViewController.m */,
 				B5D3D2101667DAC8006C3991 /* NSDictionary+bv_flatDictionaryDescription.m */,
 				B5D3D2111667DAC8006C3991 /* NSDictionary+bv_flatDictionaryDescription.h */,
+				B5D3D22F1668C0A9006C3991 /* DDLog */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B5D3D22F1668C0A9006C3991 /* DDLog */ = {
+			isa = PBXGroup;
+			children = (
+				B5D3D20A1667DAC8006C3991 /* DDFileLogger.m */,
+				B5D3D20E1667DAC8006C3991 /* DDLog.m */,
+				B5D3D20F1667DAC8006C3991 /* DDTTYLogger.m */,
 				B5D3D2121667DAC8006C3991 /* DDASLLogger.h */,
 				B5D3D2131667DAC8006C3991 /* DDASLLogger.m */,
 				B5D3D2141667DAC8006C3991 /* DDFileLogger.h */,
 				B5D3D2151667DAC8006C3991 /* DDLog.h */,
 				B5D3D2161667DAC8006C3991 /* DDTTYLogger.h */,
+			);
+			name = DDLog;
+			sourceTree = "<group>";
+		};
+		B5D3D2351668CE25006C3991 /* Other Files */ = {
+			isa = PBXGroup;
+			children = (
 				B5D3D2171667DAC8006C3991 /* main.m */,
 				B5D3D2181667DAC8006C3991 /* Default-568h@2x.png */,
 				B5D3D2191667DAC8006C3991 /* Default.png */,
 				B5D3D21A1667DAC8006C3991 /* Default@2x.png */,
+				B5D3D2091667DAC8006C3991 /* LocationRecorder.entitlements */,
+				B5D3D20D1667DAC8006C3991 /* SensorSaver-Prefix.pch */,
+				B5D3D2081667DAC8006C3991 /* SensorSaver-Info.plist */,
+				B5D3D2061667DAC8006C3991 /* InfoPlist.strings */,
 			);
-			path = Classes;
+			name = "Other Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5D3D21D1667DAC8006C3991 /* LocationRecorder-adhoc.ipa in Resources */,
 				B5D3D21E1667DAC8006C3991 /* MainStoryboard.storyboard in Resources */,
 				B5D3D21F1667DAC8006C3991 /* InfoPlist.strings in Resources */,
 				B5D3D2201667DAC8006C3991 /* SensorSaver-Info.plist in Resources */,
@@ -241,6 +253,7 @@
 				B5D3D2071667DAC8006C3991 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
